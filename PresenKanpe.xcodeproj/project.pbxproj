@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE9B8149164F70C300A96C88 /* KanpeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8148164F70C300A96C88 /* KanpeViewController.m */; };
+		AE9B814C164F920500A96C88 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B814B164F920500A96C88 /* AboutViewController.m */; };
+		AEE92261164F420D0052900C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92260164F420D0052900C /* UIKit.framework */; };
+		AEE92263164F420D0052900C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92262164F420D0052900C /* Foundation.framework */; };
+		AEE92265164F420D0052900C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92264164F420D0052900C /* CoreGraphics.framework */; };
+		AEE9226B164F420D0052900C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEE92269164F420D0052900C /* InfoPlist.strings */; };
+		AEE9226D164F420D0052900C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE9226C164F420D0052900C /* main.m */; };
+		AEE92271164F420D0052900C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE92270164F420D0052900C /* AppDelegate.m */; };
+		AEE92273164F420D0052900C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE92272164F420D0052900C /* Default.png */; };
+		AEE92275164F420E0052900C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE92274164F420E0052900C /* Default@2x.png */; };
+		AEE92277164F420E0052900C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEE92276164F420E0052900C /* Default-568h@2x.png */; };
+		AEE9227A164F420E0052900C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE92279164F420E0052900C /* MainViewController.m */; };
+		AEE9228E164F420E0052900C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE9228D164F420E0052900C /* SenTestingKit.framework */; };
+		AEE9228F164F420E0052900C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92260164F420D0052900C /* UIKit.framework */; };
+		AEE92290164F420E0052900C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92262164F420D0052900C /* Foundation.framework */; };
+		AEE92298164F420F0052900C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEE92296164F420F0052900C /* InfoPlist.strings */; };
+		AEE9229B164F420F0052900C /* PresenKanpeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE9229A164F420F0052900C /* PresenKanpeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEE92291164F420E0052900C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEE92253164F420D0052900C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEE9225B164F420D0052900C;
+			remoteInfo = PresenKanpe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE9B8147164F6FAD00A96C88 /* KanpeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KanpeViewController.h; sourceTree = "<group>"; };
+		AE9B8148164F70C300A96C88 /* KanpeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KanpeViewController.m; sourceTree = "<group>"; };
+		AE9B814A164F91F300A96C88 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		AE9B814B164F920500A96C88 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		AEE9225C164F420D0052900C /* PresenKanpe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PresenKanpe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEE92260164F420D0052900C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AEE92262164F420D0052900C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AEE92264164F420D0052900C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AEE92268164F420D0052900C /* PresenKanpe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PresenKanpe-Info.plist"; sourceTree = "<group>"; };
+		AEE9226A164F420D0052900C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEE9226C164F420D0052900C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEE9226E164F420D0052900C /* PresenKanpe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PresenKanpe-Prefix.pch"; sourceTree = "<group>"; };
+		AEE9226F164F420D0052900C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AEE92270164F420D0052900C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AEE92272164F420D0052900C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AEE92274164F420E0052900C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AEE92276164F420E0052900C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AEE92278164F420E0052900C /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		AEE92279164F420E0052900C /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		AEE9228C164F420E0052900C /* PresenKanpeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresenKanpeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEE9228D164F420E0052900C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEE92295164F420F0052900C /* PresenKanpeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PresenKanpeTests-Info.plist"; sourceTree = "<group>"; };
+		AEE92297164F420F0052900C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEE92299164F420F0052900C /* PresenKanpeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresenKanpeTests.h; sourceTree = "<group>"; };
+		AEE9229A164F420F0052900C /* PresenKanpeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresenKanpeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEE92259164F420D0052900C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE92261164F420D0052900C /* UIKit.framework in Frameworks */,
+				AEE92263164F420D0052900C /* Foundation.framework in Frameworks */,
+				AEE92265164F420D0052900C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE92288164F420E0052900C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE9228E164F420E0052900C /* SenTestingKit.framework in Frameworks */,
+				AEE9228F164F420E0052900C /* UIKit.framework in Frameworks */,
+				AEE92290164F420E0052900C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEE92251164F420D0052900C = {
+			isa = PBXGroup;
+			children = (
+				AEE92266164F420D0052900C /* PresenKanpe */,
+				AEE92293164F420E0052900C /* PresenKanpeTests */,
+				AEE9225F164F420D0052900C /* Frameworks */,
+				AEE9225D164F420D0052900C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEE9225D164F420D0052900C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEE9225C164F420D0052900C /* PresenKanpe.app */,
+				AEE9228C164F420E0052900C /* PresenKanpeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEE9225F164F420D0052900C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEE92260164F420D0052900C /* UIKit.framework */,
+				AEE92262164F420D0052900C /* Foundation.framework */,
+				AEE92264164F420D0052900C /* CoreGraphics.framework */,
+				AEE9228D164F420E0052900C /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEE92266164F420D0052900C /* PresenKanpe */ = {
+			isa = PBXGroup;
+			children = (
+				AEE9226F164F420D0052900C /* AppDelegate.h */,
+				AEE92270164F420D0052900C /* AppDelegate.m */,
+				AEE92278164F420E0052900C /* MainViewController.h */,
+				AEE92279164F420E0052900C /* MainViewController.m */,
+				AE9B8147164F6FAD00A96C88 /* KanpeViewController.h */,
+				AE9B8148164F70C300A96C88 /* KanpeViewController.m */,
+				AE9B814A164F91F300A96C88 /* AboutViewController.h */,
+				AE9B814B164F920500A96C88 /* AboutViewController.m */,
+				AEE92267164F420D0052900C /* Supporting Files */,
+			);
+			path = PresenKanpe;
+			sourceTree = "<group>";
+		};
+		AEE92267164F420D0052900C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEE92268164F420D0052900C /* PresenKanpe-Info.plist */,
+				AEE92269164F420D0052900C /* InfoPlist.strings */,
+				AEE9226C164F420D0052900C /* main.m */,
+				AEE9226E164F420D0052900C /* PresenKanpe-Prefix.pch */,
+				AEE92272164F420D0052900C /* Default.png */,
+				AEE92274164F420E0052900C /* Default@2x.png */,
+				AEE92276164F420E0052900C /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEE92293164F420E0052900C /* PresenKanpeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEE92299164F420F0052900C /* PresenKanpeTests.h */,
+				AEE9229A164F420F0052900C /* PresenKanpeTests.m */,
+				AEE92294164F420F0052900C /* Supporting Files */,
+			);
+			path = PresenKanpeTests;
+			sourceTree = "<group>";
+		};
+		AEE92294164F420F0052900C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEE92295164F420F0052900C /* PresenKanpeTests-Info.plist */,
+				AEE92296164F420F0052900C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEE9225B164F420D0052900C /* PresenKanpe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEE9229E164F420F0052900C /* Build configuration list for PBXNativeTarget "PresenKanpe" */;
+			buildPhases = (
+				AEE92258164F420D0052900C /* Sources */,
+				AEE92259164F420D0052900C /* Frameworks */,
+				AEE9225A164F420D0052900C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PresenKanpe;
+			productName = PresenKanpe;
+			productReference = AEE9225C164F420D0052900C /* PresenKanpe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEE9228B164F420E0052900C /* PresenKanpeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEE922A1164F420F0052900C /* Build configuration list for PBXNativeTarget "PresenKanpeTests" */;
+			buildPhases = (
+				AEE92287164F420E0052900C /* Sources */,
+				AEE92288164F420E0052900C /* Frameworks */,
+				AEE92289164F420E0052900C /* Resources */,
+				AEE9228A164F420E0052900C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEE92292164F420E0052900C /* PBXTargetDependency */,
+			);
+			name = PresenKanpeTests;
+			productName = PresenKanpeTests;
+			productReference = AEE9228C164F420E0052900C /* PresenKanpeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEE92253164F420D0052900C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "tatsuya endo";
+			};
+			buildConfigurationList = AEE92256164F420D0052900C /* Build configuration list for PBXProject "PresenKanpe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AEE92251164F420D0052900C;
+			productRefGroup = AEE9225D164F420D0052900C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEE9225B164F420D0052900C /* PresenKanpe */,
+				AEE9228B164F420E0052900C /* PresenKanpeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEE9225A164F420D0052900C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE9226B164F420D0052900C /* InfoPlist.strings in Resources */,
+				AEE92273164F420D0052900C /* Default.png in Resources */,
+				AEE92275164F420E0052900C /* Default@2x.png in Resources */,
+				AEE92277164F420E0052900C /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE92289164F420E0052900C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE92298164F420F0052900C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AEE9228A164F420E0052900C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEE92258164F420D0052900C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE9226D164F420D0052900C /* main.m in Sources */,
+				AEE92271164F420D0052900C /* AppDelegate.m in Sources */,
+				AEE9227A164F420E0052900C /* MainViewController.m in Sources */,
+				AE9B8149164F70C300A96C88 /* KanpeViewController.m in Sources */,
+				AE9B814C164F920500A96C88 /* AboutViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE92287164F420E0052900C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE9229B164F420F0052900C /* PresenKanpeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEE92292164F420E0052900C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEE9225B164F420D0052900C /* PresenKanpe */;
+			targetProxy = AEE92291164F420E0052900C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEE92269164F420D0052900C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEE9226A164F420D0052900C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AEE92296164F420F0052900C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEE92297164F420F0052900C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEE9229C164F420F0052900C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AEE9229D164F420F0052900C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEE9229F164F420F0052900C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PresenKanpe/PresenKanpe-Prefix.pch";
+				INFOPLIST_FILE = "PresenKanpe/PresenKanpe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AEE922A0164F420F0052900C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PresenKanpe/PresenKanpe-Prefix.pch";
+				INFOPLIST_FILE = "PresenKanpe/PresenKanpe-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AEE922A2164F420F0052900C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PresenKanpe.app/PresenKanpe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PresenKanpe/PresenKanpe-Prefix.pch";
+				INFOPLIST_FILE = "PresenKanpeTests/PresenKanpeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AEE922A3164F420F0052900C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PresenKanpe.app/PresenKanpe";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PresenKanpe/PresenKanpe-Prefix.pch";
+				INFOPLIST_FILE = "PresenKanpeTests/PresenKanpeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEE92256164F420D0052900C /* Build configuration list for PBXProject "PresenKanpe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEE9229C164F420F0052900C /* Debug */,
+				AEE9229D164F420F0052900C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEE9229E164F420F0052900C /* Build configuration list for PBXNativeTarget "PresenKanpe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEE9229F164F420F0052900C /* Debug */,
+				AEE922A0164F420F0052900C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEE922A1164F420F0052900C /* Build configuration list for PBXNativeTarget "PresenKanpeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEE922A2164F420F0052900C /* Debug */,
+				AEE922A3164F420F0052900C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEE92253164F420D0052900C /* Project object */;
+}
