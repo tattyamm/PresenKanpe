@@ -10,14 +10,12 @@
 
 @class MainViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window_;
     UIViewController* mainViewController_;
-    UIViewController* kanpeViewController_;
-    UIViewController* aboutViewController_;
 }
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic , retain) UIWindow *window;
 
 //@property (strong, nonatomic) MainViewController *mainViewController;
 

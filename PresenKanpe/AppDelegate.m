@@ -23,16 +23,18 @@
     
     // ViewController1とViewController2を作成して、
     // そのviewをそれぞれwindowに追加
-    mainViewController_ = [[MainViewController alloc] init];
-    kanpeViewController_ = [[KanpeViewController alloc] init];
-    aboutViewController_ = [[AboutViewController alloc] init];
-    [window_ addSubview:mainViewController_.view];
-    [window_ addSubview:kanpeViewController_.view];
-    [window_ addSubview:aboutViewController_.view];
+    mainViewController_ = [[UITabBarController alloc] init];
+    MainViewController* tab1 = [[[MainViewController alloc] init] autorelease];
+    AboutViewController* tab2 = [[[AboutViewController alloc] init] autorelease];
     
-    // ViewController1のほうのviewを前面に出す
-    [window_ bringSubviewToFront:mainViewController_.view];
+    //作ったViewControllerをControllerにまとめて追加
+    NSArray* controllers = [NSArray arrayWithObjects:tab1,tab2, nil];
+    [(UITabBarController*)mainViewController_ setViewControllers:controllers animated:NO];
+    
+    //windowにControllerのviewを追加
+    [window_ addSubview:mainViewController_.view];
     [window_ makeKeyAndVisible];
+    
     
     return 0;
 }
