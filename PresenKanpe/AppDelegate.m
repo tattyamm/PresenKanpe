@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "KanpeViewController.h"
-#import "AboutViewController.h"
 
 @implementation AppDelegate
 @synthesize window = window_;
@@ -23,13 +21,9 @@
     
     // ViewController1とViewController2を作成して、
     // そのviewをそれぞれwindowに追加
-    mainViewController_ = [[UITabBarController alloc] init];
-    MainViewController* tab1 = [[[MainViewController alloc] init] autorelease];
-    AboutViewController* tab2 = [[[AboutViewController alloc] init] autorelease];
     
-    //作ったViewControllerをControllerにまとめて追加
-    NSArray* controllers = [NSArray arrayWithObjects:tab1,tab2, nil];
-    [(UITabBarController*)mainViewController_ setViewControllers:controllers animated:NO];
+    MainViewController* mainView = [[[MainViewController alloc] init] autorelease];
+    mainViewController_ = [[UINavigationController alloc] initWithRootViewController:mainView];
     
     //windowにControllerのviewを追加
     [window_ addSubview:mainViewController_.view];

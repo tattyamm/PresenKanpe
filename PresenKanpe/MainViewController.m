@@ -7,8 +7,18 @@
 //
 
 #import "MainViewController.h"
+#import "KanpeViewController.h"
+#import "AboutViewController.h"
+
 
 @implementation MainViewController
+
+-(id)init{
+//    if((self=[super initWithStyle:UITableViewStylePlain])){
+        self.title=@"PresenKanpe";
+//    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -36,7 +46,7 @@
     button.autoresizingMask =
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [button addTarget:self
-               action:@selector(buttonDidPush1)
+               action:@selector(buttonDidPushKanpe)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
@@ -50,22 +60,20 @@
     button2.autoresizingMask =
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [button2 addTarget:self
-               action:@selector(buttonDidPush2)
+               action:@selector(buttonDidPushAbout)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
 
 }
 
-- (void)buttonDidPush1 {
-    // 自分自身を背面に移動
-    // 結果として裏にあるViewController2が前面に出る
-    [self.view.window sendSubviewToBack:self.view];
+- (void)buttonDidPushKanpe {
+    AboutViewController* about = [[[AboutViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:about animated:YES];
 }
 
-- (void)buttonDidPush2 {
-    // 自分自身を背面に移動
-    // 結果として裏にあるViewController2が前面に出る
-    [self.view.window sendSubviewToBack:self.view];
+- (void)buttonDidPushAbout {
+    KanpeViewController* kanpe = [[[KanpeViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:kanpe animated:YES];
 }
 
 
