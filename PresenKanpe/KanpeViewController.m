@@ -16,7 +16,7 @@
     // こんにちは、世界の裏側へ！ ラベルを追加
     // 背景は黒、文字は白で
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    label.text = @"こんばんわ、世界！";
+    label.text = @"画面１";
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor blackColor];
     label.textColor = [UIColor whiteColor];
@@ -40,9 +40,7 @@
 }
 
 - (void)buttonDidPush {
-    // 自分自身を背面に移動
-    // 結果として裏にあるViewController1が前面に出る
-    [self.view.window sendSubviewToBack:self.view];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -38,7 +38,7 @@
     // ボタンを追加
     // KanpeViewへ
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"画面遷移" forState:UIControlStateNormal];
+    [button setTitle:@"画面遷移２" forState:UIControlStateNormal];
     [button sizeToFit];
     CGPoint newPoint = self.view.center;
     newPoint.y += 50;
@@ -53,7 +53,7 @@
     // ボタンを追加
     // AboutViewへ
     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button2 setTitle:@"画面遷移" forState:UIControlStateNormal];
+    [button2 setTitle:@"画面遷移１" forState:UIControlStateNormal];
     [button2 sizeToFit];
     newPoint.y += 100;
     button2.center = newPoint;
