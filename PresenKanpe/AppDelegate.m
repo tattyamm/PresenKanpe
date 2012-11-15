@@ -14,18 +14,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //ここから前の部分
-    // windowを自分で作成
+    //viewを作成
     CGRect bounds = [[UIScreen mainScreen] bounds];
     window_ = [[UIWindow alloc] initWithFrame:bounds];
     
-    // ViewController1とViewController2を作成して、
-    // そのviewをそれぞれwindowに追加
-    
+    //そのviewをwindowに追加
     MainViewController* mainView = [[[MainViewController alloc] init] autorelease];
     mainViewController_ = [[UINavigationController alloc] initWithRootViewController:mainView];
     
-    //windowにControllerのviewを追加
     [window_ addSubview:mainViewController_.view];
     [window_ makeKeyAndVisible];
     

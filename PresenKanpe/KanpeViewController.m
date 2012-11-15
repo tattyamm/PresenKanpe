@@ -13,8 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // こんにちは、世界の裏側へ！ ラベルを追加
-    // 背景は黒、文字は白で
+    //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
     label.text = @"画面１";
     label.textAlignment = NSTextAlignmentCenter;
@@ -23,8 +22,7 @@
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
     
-    // ボタンを追加
-    // これをタップしたら画面遷移する
+    //ボタン
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"画面遷移" forState:UIControlStateNormal];
     [button sizeToFit];

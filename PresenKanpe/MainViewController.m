@@ -23,10 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
-    // Hello, world! ラベルを追加
-    // 背景は白、文字は黒で
+    //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
     label.text = @"Hello, world!";
     label.textAlignment = NSTextAlignmentCenter;
@@ -35,8 +33,7 @@
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
     
-    // ボタンを追加
-    // KanpeViewへ
+    //ボタン
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"画面遷移２" forState:UIControlStateNormal];
     [button sizeToFit];
@@ -50,8 +47,7 @@
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-    // ボタンを追加
-    // AboutViewへ
+    //ボタンを追加
     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button2 setTitle:@"画面遷移１" forState:UIControlStateNormal];
     [button2 sizeToFit];
