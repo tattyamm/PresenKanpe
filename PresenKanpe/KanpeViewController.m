@@ -13,6 +13,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //viewの設定
+    self.view.backgroundColor = [UIColor blackColor];
+    
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
     label.text = @"画面１";

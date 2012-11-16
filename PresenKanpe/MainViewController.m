@@ -14,15 +14,23 @@
 @implementation MainViewController
 
 -(id)init{
-//    if((self=[super initWithStyle:UITableViewStylePlain])){
-        self.title=@"PresenKanpe";
-//    }
+    self.title=@"PresenKanpe";
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //navigationBar部分
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    //viewの設定
+    self.view.backgroundColor = [UIColor blackColor];
+    //ツールバー TODO もっと細くてよいので、独自実装になるかも。
+    UIBarButtonItem* uiBarButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(buttonDidPushUiButton1) ] autorelease];
+    NSArray* uiBarButtons = [NSArray arrayWithObjects:uiBarButton, nil];
+    self.navigationController.toolbarHidden = NO;
+    [self setToolbarItems:uiBarButtons animated:YES];
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
@@ -62,6 +70,7 @@
 
 }
 
+
 - (void)buttonDidPushKanpe {
     AboutViewController* about = [[[AboutViewController alloc] init] autorelease];
     [self.navigationController pushViewController:about animated:YES];
@@ -70,6 +79,11 @@
 - (void)buttonDidPushAbout {
     KanpeViewController* kanpe = [[[KanpeViewController alloc] init] autorelease];
     [self.navigationController pushViewController:kanpe animated:YES];
+}
+
+- (void)buttonDidPushUiButton1 {
+    AboutViewController* about = [[[AboutViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:about animated:YES];
 }
 
 
