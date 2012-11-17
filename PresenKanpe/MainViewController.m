@@ -27,7 +27,13 @@
     //viewの設定
     self.view.backgroundColor = [UIColor blackColor];
     //ツールバー TODO もっと細くてよいので、独自実装になるかも。
-    UIBarButtonItem* uiBarButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(buttonDidPushUiButton1) ] autorelease];
+    UIImage* buttonImage = [UIImage imageNamed:@"info_24.png"];
+    UIBarButtonItem* uiBarButton = [[[UIBarButtonItem alloc]
+                                     //initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                     initWithImage:buttonImage
+                                     style:UIBarButtonItemStylePlain
+                                     target:self
+                                     action:@selector(buttonDidPushUiButton1) ] autorelease];
     NSArray* uiBarButtons = [NSArray arrayWithObjects:uiBarButton, nil];
     self.navigationController.toolbarHidden = NO;
     [self setToolbarItems:uiBarButtons animated:YES];
@@ -43,7 +49,7 @@
     
     //ボタン
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"画面遷移２" forState:UIControlStateNormal];
+    [button setTitle:@"about" forState:UIControlStateNormal];
     [button sizeToFit];
     CGPoint newPoint = self.view.center;
     newPoint.y += 50;
@@ -57,7 +63,7 @@
     
     //ボタンを追加
     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button2 setTitle:@"画面遷移１" forState:UIControlStateNormal];
+    [button2 setTitle:@"presen" forState:UIControlStateNormal];
     [button2 sizeToFit];
     newPoint.y += 100;
     button2.center = newPoint;

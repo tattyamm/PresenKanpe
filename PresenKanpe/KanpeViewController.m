@@ -18,7 +18,7 @@
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    label.text = @"画面１";
+    label.text = @"kanpe view";
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor blackColor];
     label.textColor = [UIColor whiteColor];

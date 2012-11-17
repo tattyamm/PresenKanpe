@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1A369B16578EB3000BE1A1 /* info_64.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1A369A16578EB3000BE1A1 /* info_64.png */; };
+		AE1A369E165791D3000BE1A1 /* info_24.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1A369C165791D3000BE1A1 /* info_24.png */; };
+		AE1A369F165791D3000BE1A1 /* info_48.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1A369D165791D3000BE1A1 /* info_48.png */; };
 		AE9B8149164F70C300A96C88 /* KanpeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8148164F70C300A96C88 /* KanpeViewController.m */; };
 		AE9B814C164F920500A96C88 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B814B164F920500A96C88 /* AboutViewController.m */; };
 		AEE92261164F420D0052900C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92260164F420D0052900C /* UIKit.framework */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE1A369A16578EB3000BE1A1 /* info_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_64.png; sourceTree = "<group>"; };
+		AE1A369C165791D3000BE1A1 /* info_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_24.png; sourceTree = "<group>"; };
+		AE1A369D165791D3000BE1A1 /* info_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_48.png; sourceTree = "<group>"; };
 		AE9B8147164F6FAD00A96C88 /* KanpeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KanpeViewController.h; sourceTree = "<group>"; };
 		AE9B8148164F70C300A96C88 /* KanpeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KanpeViewController.m; sourceTree = "<group>"; };
 		AE9B814A164F91F300A96C88 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -88,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE1A369816578E92000BE1A1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A369C165791D3000BE1A1 /* info_24.png */,
+				AE1A369D165791D3000BE1A1 /* info_48.png */,
+				AE1A369A16578EB3000BE1A1 /* info_64.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		AEE92251164F420D0052900C = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +145,7 @@
 				AE9B8148164F70C300A96C88 /* KanpeViewController.m */,
 				AE9B814A164F91F300A96C88 /* AboutViewController.h */,
 				AE9B814B164F920500A96C88 /* AboutViewController.m */,
+				AE1A369816578E92000BE1A1 /* Images */,
 				AEE92267164F420D0052900C /* Supporting Files */,
 			);
 			path = PresenKanpe;
@@ -242,6 +259,9 @@
 				AEE92273164F420D0052900C /* Default.png in Resources */,
 				AEE92275164F420E0052900C /* Default@2x.png in Resources */,
 				AEE92277164F420E0052900C /* Default-568h@2x.png in Resources */,
+				AE1A369B16578EB3000BE1A1 /* info_64.png in Resources */,
+				AE1A369E165791D3000BE1A1 /* info_24.png in Resources */,
+				AE1A369F165791D3000BE1A1 /* info_48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
