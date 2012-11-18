@@ -22,7 +22,11 @@
     MainViewController* mainView = [[[MainViewController alloc] init] autorelease];
     mainViewController_ = [[UINavigationController alloc] initWithRootViewController:mainView];
     
-    [window_ addSubview:mainViewController_.view];
+    //これではだめ
+    //[window_ addSubview:mainViewController_.view];
+    //こうする(こうしないと回転しない)
+    self.window.rootViewController = mainViewController_;
+
     [window_ makeKeyAndVisible];
     
     
@@ -55,6 +59,22 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//回転対応
+//ios5
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	return YES;
+}
+//ios6
+- (BOOL)shouldAutorotate {
+	return YES;
+}
+- (NSUInteger)supportedInterfaceOrientations {
+    //info.plistに書いた方が優先されるらしい
+	return UIInterfaceOrientationMaskAll;
+}
+
+
 
 - (void)dealloc {
     [mainViewController_ release];
