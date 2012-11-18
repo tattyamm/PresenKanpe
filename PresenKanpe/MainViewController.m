@@ -31,7 +31,14 @@
                    action:@selector(buttonDidPushAbout)
          forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-
+    //  戻るボタンの変更
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+                                   initWithImage:[UIImage imageNamed:@"arrow_left_24.png"]
+                                   style:UIBarButtonItemStyleBordered
+                                   target:nil
+                                   action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
     
     
     //ラベル
