@@ -24,19 +24,10 @@
     
     //navigationBar部分
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    //viewの設定
-    self.view.backgroundColor = [UIColor blackColor];
-    //ツールバー TODO もっと細くてよいので、独自実装になるかも。
-    UIImage* buttonImage = [UIImage imageNamed:@"info_24.png"];
-    UIBarButtonItem* uiBarButton = [[[UIBarButtonItem alloc]
-                                     //initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                     initWithImage:buttonImage
-                                     style:UIBarButtonItemStylePlain
-                                     target:self
-                                     action:@selector(buttonDidPushUiButton1) ] autorelease];
-    NSArray* uiBarButtons = [NSArray arrayWithObjects:uiBarButton, nil];
-    self.navigationController.toolbarHidden = NO;
-    [self setToolbarItems:uiBarButtons animated:YES];
+    UIImage* infoButtonImage = [UIImage imageNamed:@"info_24.png"]; //TODO UIButtonTypeInfoLightは使えないのだろうか。
+    UIImageView* infoButtonImageView = [[[UIImageView alloc] initWithImage:infoButtonImage] autorelease];
+    UIBarButtonItem* navBarinfoButtonIcon = [[[UIBarButtonItem alloc] initWithCustomView:infoButtonImageView] autorelease];
+    self.navigationItem.leftBarButtonItem =navBarinfoButtonIcon;
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
