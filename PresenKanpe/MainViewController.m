@@ -24,10 +24,15 @@
     
     //navigationBar部分
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    UIImage* infoButtonImage = [UIImage imageNamed:@"info_24.png"]; //TODO UIButtonTypeInfoLightは使えないのだろうか。
-    UIImageView* infoButtonImageView = [[[UIImageView alloc] initWithImage:infoButtonImage] autorelease];
-    UIBarButtonItem* navBarinfoButtonIcon = [[[UIBarButtonItem alloc] initWithCustomView:infoButtonImageView] autorelease];
-    self.navigationItem.leftBarButtonItem =navBarinfoButtonIcon;
+    //  iボタンを追加
+    //  http://d.hatena.ne.jp/chaoruko/20120203/1328236510
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self
+                   action:@selector(buttonDidPushAbout)
+         forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+
+    
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
@@ -38,30 +43,17 @@
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
     
-    //ボタン
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"about" forState:UIControlStateNormal];
-    [button sizeToFit];
-    CGPoint newPoint = self.view.center;
-    newPoint.y += 50;
-    button.center = newPoint;
-    button.autoresizingMask =
-    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [button addTarget:self
-               action:@selector(buttonDidPushKanpe)
-     forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    
-    //ボタンを追加
+    //ボタンを追加(カンペ画面へ)
     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button2 setTitle:@"presen" forState:UIControlStateNormal];
     [button2 sizeToFit];
-    newPoint.y += 100;
+    CGPoint newPoint = self.view.center;
+    newPoint.y += 50;
     button2.center = newPoint;
     button2.autoresizingMask =
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [button2 addTarget:self
-               action:@selector(buttonDidPushAbout)
+               action:@selector(buttonDidPushKanpe)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
 
@@ -69,18 +61,13 @@
 
 
 - (void)buttonDidPushKanpe {
-    AboutViewController* about = [[[AboutViewController alloc] init] autorelease];
+    AboutViewController* about = [[[KanpeViewController alloc] init] autorelease];
     [self.navigationController pushViewController:about animated:YES];
 }
 
 - (void)buttonDidPushAbout {
-    KanpeViewController* kanpe = [[[KanpeViewController alloc] init] autorelease];
+    KanpeViewController* kanpe = [[[AboutViewController alloc] init] autorelease];
     [self.navigationController pushViewController:kanpe animated:YES];
-}
-
-- (void)buttonDidPushUiButton1 {
-    AboutViewController* about = [[[AboutViewController alloc] init] autorelease];
-    [self.navigationController pushViewController:about animated:YES];
 }
 
 
