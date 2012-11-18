@@ -61,6 +61,12 @@
 }
 
 //回転対応
+/**
+ この辺りに対応しないと、iOS5でshouldAutorotateToInterfaceOrientationが読み取られない。
+ http://hiiro-game.seesaa.net/article/293374528.html
+ http://iphone-app-developer.seesaa.net/article/293717318.html
+ http://ken-plus.blogspot.jp/2012/09/ios6-uinavigationcontrollerautorotate.html
+ */
 //ios5
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
 	return YES;
