@@ -61,12 +61,12 @@
 
 
 - (void)buttonDidPushKanpe {
-    AboutViewController* about = [[[KanpeViewController alloc] init] autorelease];
+    KanpeViewController* about = [[[KanpeViewController alloc] init] autorelease];
     [self.navigationController pushViewController:about animated:YES];
 }
 
 - (void)buttonDidPushAbout {
-    KanpeViewController* kanpe = [[[AboutViewController alloc] init] autorelease];
+    AboutViewController* kanpe = [[[AboutViewController alloc] init] autorelease];
     [self.navigationController pushViewController:kanpe animated:YES];
 }
 
