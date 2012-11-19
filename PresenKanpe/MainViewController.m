@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import "KanpeViewController.h"
 #import "AboutViewController.h"
-
+#import <QuartzCore/QuartzCore.h>   //UITextFieldの枠線を設定するのに使った
 
 @implementation MainViewController
 
@@ -41,14 +41,32 @@
     
     
     
+    //画面サイズ取得
+    CGRect cgRectSize = [[UIScreen mainScreen] bounds];
+    
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    label.text = @"Hello, world!";
+    label.text = @"表示する文字を入力して下さい";
     label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = [UIColor whiteColor];
-    label.textColor = [UIColor blackColor];
+    label.backgroundColor = [UIColor blackColor];
+    label.textColor = [UIColor whiteColor];
+    label.frame = CGRectMake(0,0,cgRectSize.size.width,80);
+    label.textAlignment = UITextAlignmentLeft;
+    label.adjustsFontSizeToFitWidth = YES;
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
+    
+    //テキストフィールド
+    UITextField* textField = [[[UITextField alloc] init] autorelease];
+    textField.frame = CGRectMake(0, 40, cgRectSize.size.width, 100);
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.textColor = [UIColor whiteColor];
+    textField.layer.cornerRadius = 5.0f;//角丸
+    [[textField layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+    [[textField layer] setBorderWidth:1.0];
+    textField.text = @"（TODO 前回の入力内容を追加）";
+    [self.view addSubview:textField];
     
     //ボタンを追加(カンペ画面へ)
     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
