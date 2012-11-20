@@ -42,7 +42,7 @@
     
     
     //画面サイズ取得
-    CGRect cgRectSize = [[UIScreen mainScreen] bounds];
+    CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
@@ -50,40 +50,56 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor blackColor];
     label.textColor = [UIColor whiteColor];
-    label.frame = CGRectMake(0,0,cgRectSize.size.width,80);
+    label.frame = CGRectMake(0,0,cgRectSize.size.width,70);
     label.textAlignment = UITextAlignmentLeft;
     label.adjustsFontSizeToFitWidth = YES;
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
     
-    //テキストフィールド
-    UITextField* textField = [[[UITextField alloc] init] autorelease];
-    textField.frame = CGRectMake(0, 40, cgRectSize.size.width, 100);
-    textField.borderStyle = UITextBorderStyleRoundedRect;
+    //テキストフィールド TODO キーボードサイズを取得し、iPhoneとiPadとiOS5でちょうど良く表示する
+    UITextView* textField = [[[UITextView alloc] init] autorelease];
+    textField.frame = CGRectMake(0, 30, cgRectSize.size.width, 100);
     textField.backgroundColor = [UIColor whiteColor];
-    textField.textColor = [UIColor whiteColor];
+    textField.textColor = [UIColor blackColor];
     textField.layer.cornerRadius = 5.0f;//角丸
+    textField.layer.borderColor = [[UIColor blackColor] CGColor];
+    textField.layer.borderWidth = 1;
     [[textField layer] setBorderColor:[[UIColor whiteColor] CGColor]];
     [[textField layer] setBorderWidth:1.0];
     textField.text = @"（TODO 前回の入力内容を追加）";
     [self.view addSubview:textField];
     
-    //ボタンを追加(カンペ画面へ)
-    UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button2 setTitle:@"presen" forState:UIControlStateNormal];
-    [button2 sizeToFit];
-    CGPoint newPoint = self.view.center;
-    newPoint.y += 50;
-    button2.center = newPoint;
-    button2.autoresizingMask =
-    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [button2 addTarget:self
-               action:@selector(buttonDidPushKanpe)
+    //カンペ画面へ キーボードと同時に出る　http://www.toyship.org/archives/82
+    UIView* accessoryView =[[[UIView alloc] initWithFrame:CGRectMake(0,0,cgRectSize.size.width,40)] autorelease];
+    accessoryView.backgroundColor = [UIColor grayColor];
+    // ボタンを作成する。
+    UIButton* nextButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    nextButton.frame = CGRectMake(cgRectSize.size.width/3*2,0,cgRectSize.size.width/3*1,40);  //TODO iPadサイズ調整
+    [nextButton setTitle:@"決定" forState:UIControlStateNormal];
+    // ボタンを押したときによばれる動作を設定する。
+    [nextButton addTarget:self action:@selector(buttonDidPushKanpe) forControlEvents:UIControlEventTouchUpInside];
+    // ボタンをViewに貼る
+    [accessoryView addSubview:nextButton];
+    textField.inputAccessoryView = accessoryView;
+    
+    /*
+     //ボタンを追加(カンペ画面へ)(ただのボタン)
+     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     [button2 setTitle:@"presen" forState:UIControlStateNormal];
+     [button2 sizeToFit];
+     CGPoint newPoint = self.view.center;
+     newPoint.y += 50;
+     button2.center = newPoint;
+     button2.autoresizingMask =
+     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+     [button2 addTarget:self
+     action:@selector(buttonDidPushKanpe)
      forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button2];
+     [self.view addSubview:button2];
+     */
+    
 
 }
-
 
 - (void)buttonDidPushKanpe {
     KanpeViewController* about = [[[KanpeViewController alloc] init] autorelease];
