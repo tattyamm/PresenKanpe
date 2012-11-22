@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import "KanpeViewController.h"
 #import "AboutViewController.h"
-#import <QuartzCore/QuartzCore.h>   //UITextFieldの枠線を設定するのに使った
+#import <QuartzCore/QuartzCore.h>   //UITextFieldの枠線や、UIButtonの背景色を設定するのに使った
 
 @implementation MainViewController
 
@@ -72,10 +72,18 @@
     //カンペ画面へ キーボードと同時に出る　http://www.toyship.org/archives/82
     UIView* accessoryView =[[[UIView alloc] initWithFrame:CGRectMake(0,0,cgRectSize.size.width,40)] autorelease];
     accessoryView.backgroundColor = [UIColor grayColor];
-    // ボタンを作成する。
-    UIButton* nextButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    nextButton.frame = CGRectMake(cgRectSize.size.width/3*2,0,cgRectSize.size.width/3*1,40);  //TODO iPadサイズ調整
+    // ボタンを作成する。　//TODO iPad向けの調整
+    UIButton* nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    nextButton.frame = CGRectMake(cgRectSize.size.width/3*2,0,cgRectSize.size.width/3*1,40);
+    [[nextButton layer] setCornerRadius:20.0f];
+    [[nextButton layer] setMasksToBounds:YES];
+    [[nextButton layer] setBorderWidth:2.0f];
+    [[nextButton layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
+    [[nextButton layer] setBorderColor:[[UIColor whiteColor] CGColor]];
     [nextButton setTitle:@"決定" forState:UIControlStateNormal];
+    
+    
+    
     // ボタンを押したときによばれる動作を設定する。
     [nextButton addTarget:self action:@selector(buttonDidPushKanpe) forControlEvents:UIControlEventTouchUpInside];
     // ボタンをViewに貼る

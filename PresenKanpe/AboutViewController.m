@@ -7,6 +7,7 @@
 //
 
 #import "AboutViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AboutViewController
 

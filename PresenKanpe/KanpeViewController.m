@@ -7,6 +7,7 @@
 //
 
 #import "KanpeViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation KanpeViewController
 
@@ -15,6 +16,9 @@
     
     //viewの設定
     self.view.backgroundColor = [UIColor blackColor];
+    
+    //画面サイズ取得
+    CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
@@ -26,18 +30,21 @@
     [self.view addSubview:label];
     
     //ボタン
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"画面遷移" forState:UIControlStateNormal];
-    [button sizeToFit];
-    CGPoint newPoint = self.view.center;
-    newPoint.y += 50;
-    button.center = newPoint;
+    button.frame = CGRectMake(cgRectSize.size.width/3*2,0,cgRectSize.size.width/3*1,40);
+    [[button layer] setCornerRadius:20.0f];
+    [[button layer] setMasksToBounds:YES];
+    [[button layer] setBorderWidth:2.0f];
+    [[button layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
+    [[button layer] setBorderColor:[[UIColor whiteColor] CGColor]];
     button.autoresizingMask =
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [button addTarget:self
                action:@selector(buttonDidPush)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
 }
 
 - (void)buttonDidPush {
