@@ -17,12 +17,31 @@
     //viewの設定
     self.view.backgroundColor = [UIColor blackColor];
     
+    //画面サイズ取得
+    CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
+    
+    
+    //ラベル高さ調整の実験
+    NSString *labelStr = @"使い方\n1.プレゼン中に見るメモを入力\n2.プレゼン画面へ\n3.プレゼン中にタイマーとメモをみてしゃべる";
+    CGSize labelStrSize = [labelStr
+                   sizeWithFont:[UIFont boldSystemFontOfSize:13]
+                   constrainedToSize:CGSizeMake(cgRectSize.size.width,cgRectSize.size.height/2)
+                   lineBreakMode:UILineBreakModeWordWrap];
+    NSLog(@"labelStr height: %f", labelStrSize.height);
+    NSLog(@"cgRectSize height: %f", cgRectSize.size.height);
+    
+    
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    label.text = @"about view";
+    label.text = labelStr;
+    label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor blackColor];
     label.textColor = [UIColor whiteColor];
+    label.frame = CGRectMake(0,0,cgRectSize.size.width,cgRectSize.size.height);
+    [label sizeToFit];
+    label.textAlignment = UITextAlignmentLeft;
+    label.adjustsFontSizeToFitWidth = YES;
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
     
