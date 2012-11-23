@@ -9,6 +9,8 @@
 #import "AboutViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define BUTTON_HEIGHT 40 //ボタンの高さ
+
 @implementation AboutViewController
 
 - (void)viewDidLoad {
@@ -18,8 +20,9 @@
     self.view.backgroundColor = [UIColor blackColor];
     
     //画面サイズ取得
-    CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
-    
+    CGRect cgRectSize = [[UIScreen mainScreen] applicationFrame]; //ステータスバーを含まない高さ
+    //NavigationBarの高さ取得
+    CGFloat navBarHeight  = self.navigationController.navigationBar.bounds.size.height;
     
     //ラベル
     NSString *labelStr = @"使い方\n1.プレゼン中に見るメモを入力\n2.プレゼン画面へ\n3.プレゼン中にタイマーとメモをみてしゃべる";
@@ -36,9 +39,9 @@
     //ボタン 作者twitterへのボタン
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"作者twitter" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0,0,cgRectSize.size.width,40);
-    button.autoresizingMask =
-    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    button.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
+                              ,cgRectSize.size.width,BUTTON_HEIGHT);
+    //button.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [[button layer] setCornerRadius:20.0f];
     [[button layer] setMasksToBounds:YES];
     [[button layer] setBorderWidth:2.0f];
@@ -48,6 +51,9 @@
                action:@selector(buttonDidPush)
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    NSLog(@"ボタン位置取りたい　x=%f , y=%f", button.frame.origin.x,button.frame.origin.y); //ボタン高さbutton.self.frame.size.height
+
 
 }
 
