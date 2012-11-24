@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCustomButton : UIView
+@interface MyCustomButton : UIButton
 
 @end

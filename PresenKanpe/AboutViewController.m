@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MyCustomButton.h"
 
 #define BUTTON_HEIGHT 40 //ボタンの高さ
 
@@ -52,8 +53,14 @@
      forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-    NSLog(@"ボタン位置取りたい　x=%f , y=%f", button.frame.origin.x,button.frame.origin.y); //ボタン高さbutton.self.frame.size.height
-
+    //カスタムボタン
+    MyCustomButton *customButton = [[MyCustomButton alloc] init];
+    customButton.frame = CGRectMake(10,200,100,100);
+    [customButton setTitle:@"作者twitter" forState:UIControlStateNormal];
+    [customButton addTarget:self
+               action:@selector(buttonDidPush)
+     forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:customButton];
 
 }
 
