@@ -38,20 +38,15 @@
     [self.view addSubview:label];
     
     //ボタン 作者twitterへのボタン
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"作者twitter" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
-                              ,cgRectSize.size.width,BUTTON_HEIGHT);
-    //button.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [[button layer] setCornerRadius:20.0f];
-    [[button layer] setMasksToBounds:YES];
-    [[button layer] setBorderWidth:2.0f];
-    [[button layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
-    [[button layer] setBorderColor:[[UIColor whiteColor] CGColor]];
-    [button addTarget:self
-               action:@selector(buttonDidPush)
-     forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    MyCustomButton *goTwitterButton = [[MyCustomButton alloc] init];
+    goTwitterButton.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
+                                       ,cgRectSize.size.width,BUTTON_HEIGHT);
+    [goTwitterButton setTitle:@"作者twitter" forState:UIControlStateNormal];
+    [goTwitterButton addTarget:self
+                        action:@selector(buttonDidPush)
+              forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goTwitterButton];
+    
     
     //カスタムボタン
     MyCustomButton *customButton = [[MyCustomButton alloc] init];
