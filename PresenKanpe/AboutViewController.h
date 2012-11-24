@@ -2,7 +2,7 @@
 //  AboutViewController.h
 //  PresenKanpe
 //
-//  Created by tatsuya endo on 2012/11/11.
+//  Created by entatsu on 2012/11/11.
 //  Copyright (c) 2012年 entatsu. All rights reserved.
 //
 

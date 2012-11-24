@@ -36,7 +36,7 @@
     [[self layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
     [[self layer] setBorderColor:[[UIColor whiteColor] CGColor]];
     /* 自分で書く必要がある部分
-    [button setTitle:@"作者twitter" forState:UIControlStateNormal];
+    [button setTitle:@"ボタン" forState:UIControlStateNormal];
     [button addTarget:self
                action:@selector(buttonDidPush)
      forControlEvents:UIControlEventTouchUpInside];
