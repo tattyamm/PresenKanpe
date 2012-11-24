@@ -28,9 +28,16 @@
     //  http://d.hatena.ne.jp/chaoruko/20120203/1328236510
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [infoButton addTarget:self
-                   action:@selector(buttonDidPushAbout)
+                   action:@selector(infoButtonDiDPushed)
          forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    //  決定ボタンを追加(任意の文字)
+    UIBarButtonItem *goButton = [[UIBarButtonItem alloc]
+                            initWithTitle:@"決定"
+                            style:UIBarButtonItemStylePlain
+                            target:self
+                            action:@selector(buttonDidPushKanpe)];
+    self.navigationItem.rightBarButtonItem = goButton;
     //  戻るボタンの変更
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithImage:[UIImage imageNamed:@"arrow_left_24.png"]
@@ -114,7 +121,7 @@
     [self.navigationController pushViewController:about animated:YES];
 }
 
-- (void)buttonDidPushAbout {
+- (void)infoButtonDiDPushed {
     AboutViewController* kanpe = [[[AboutViewController alloc] init] autorelease];
     [self.navigationController pushViewController:kanpe animated:YES];
 }
