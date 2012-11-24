@@ -33,8 +33,21 @@
     [[self layer] setCornerRadius:20.0f];
     [[self layer] setMasksToBounds:YES];
     [[self layer] setBorderWidth:2.0f];
-    [[self layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
-    [[self layer] setBorderColor:[[UIColor whiteColor] CGColor]];
+
+    //ボタンタップ時の設定
+    UIColor *backColor = [UIColor blackColor];
+    UIColor *borderColor = [UIColor whiteColor];
+
+    if (self.state && (UIControlStateSelected || UIControlStateHighlighted)) {
+        backColor = [UIColor whiteColor];
+        borderColor = [UIColor blackColor];
+    }else{
+        backColor = [UIColor blackColor];
+        borderColor = [UIColor whiteColor];
+    }
+    [[self layer] setBackgroundColor:[backColor CGColor]];  // forState:UIControlStateNormalではだめ。
+    [[self layer] setBorderColor:[borderColor CGColor]];
+    
     /* 自分で書く必要がある部分
     [button setTitle:@"ボタン" forState:UIControlStateNormal];
     [button addTarget:self
