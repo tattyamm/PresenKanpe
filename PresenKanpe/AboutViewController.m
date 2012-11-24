@@ -26,7 +26,7 @@
     CGFloat navBarHeight  = self.navigationController.navigationBar.bounds.size.height;
     
     //ラベル
-    NSString *labelStr = @"使い方\n1.プレゼン中に見るメモを入力\n2.プレゼン画面へ\n3.プレゼン中にタイマーとメモをみてしゃべる";
+    NSString *labelStr = @"使い方\n1.あーすしてこーしてこーしてどーしてそーしてこーする\n2.こーする\n3.どーする";
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
     label.text = labelStr;
     label.lineBreakMode = UILineBreakModeWordWrap;
@@ -39,24 +39,30 @@
     
     //ボタン 作者twitterへのボタン
     MyCustomButton *goTwitterButton = [[MyCustomButton alloc] init];
-    goTwitterButton.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
+    goTwitterButton.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT*2
                                        ,cgRectSize.size.width,BUTTON_HEIGHT);
-    [goTwitterButton setTitle:@"作者twitter" forState:UIControlStateNormal];
+    [goTwitterButton setTitle:@"作者のtwitterへ" forState:UIControlStateNormal];
     [goTwitterButton addTarget:self
-                        action:@selector(buttonDidPush)
+                        action:@selector(goTwitter)
               forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:goTwitterButton];
-    
-    
-    //カスタムボタン
-    MyCustomButton *customButton = [[MyCustomButton alloc] init];
-    customButton.frame = CGRectMake(10,200,100,100);
-    [customButton setTitle:@"作者twitter" forState:UIControlStateNormal];
-    [customButton addTarget:self
-               action:@selector(buttonDidPush)
-     forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:customButton];
 
+    
+    //ボタン 戻るボタン
+    MyCustomButton *goBackButton = [[MyCustomButton alloc] init];
+    goBackButton.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
+                                       ,cgRectSize.size.width,BUTTON_HEIGHT);
+    [goBackButton setTitle:@"戻る" forState:UIControlStateNormal];
+    [goBackButton addTarget:self
+                        action:@selector(buttonDidPush)
+              forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goBackButton];
+
+}
+
+- (void)goTwitter {
+    NSString *urlString = @"https://twitter.com/tattyamm";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
 
 - (void)buttonDidPush {
