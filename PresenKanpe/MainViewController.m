@@ -36,7 +36,7 @@
                             initWithTitle:@"決定"
                             style:UIBarButtonItemStylePlain
                             target:self
-                            action:@selector(buttonDidPushKanpe)];
+                            action:@selector(goButtonDidPushKanpe)];
     self.navigationItem.rightBarButtonItem = goButton;
     //  戻るボタンの変更
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
@@ -76,6 +76,8 @@
     textField.text = @"（TODO 前回の入力内容を追加）";
     [self.view addSubview:textField];
     
+    
+    /*
     //カンペ画面へ キーボードと同時に出る　http://www.toyship.org/archives/82
     UIView* accessoryView =[[[UIView alloc] initWithFrame:CGRectMake(0,0,cgRectSize.size.width,40)] autorelease];
     accessoryView.backgroundColor = [UIColor grayColor];
@@ -88,35 +90,16 @@
     [[nextButton layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
     [[nextButton layer] setBorderColor:[[UIColor whiteColor] CGColor]];
     [nextButton setTitle:@"決定" forState:UIControlStateNormal];
-    
-    
-    
     // ボタンを押したときによばれる動作を設定する。
-    [nextButton addTarget:self action:@selector(buttonDidPushKanpe) forControlEvents:UIControlEventTouchUpInside];
+    [nextButton addTarget:self action:@selector(goButtonDidPushKanpe) forControlEvents:UIControlEventTouchUpInside];
     // ボタンをViewに貼る
     [accessoryView addSubview:nextButton];
     textField.inputAccessoryView = accessoryView;
-    
-    /*
-     //ボタンを追加(カンペ画面へ)(ただのボタン)
-     UIButton* button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-     [button2 setTitle:@"presen" forState:UIControlStateNormal];
-     [button2 sizeToFit];
-     CGPoint newPoint = self.view.center;
-     newPoint.y += 50;
-     button2.center = newPoint;
-     button2.autoresizingMask =
-     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-     [button2 addTarget:self
-     action:@selector(buttonDidPushKanpe)
-     forControlEvents:UIControlEventTouchUpInside];
-     [self.view addSubview:button2];
      */
     
-
 }
 
-- (void)buttonDidPushKanpe {
+- (void)goButtonDidPushKanpe {
     KanpeViewController* about = [[[KanpeViewController alloc] init] autorelease];
     [self.navigationController pushViewController:about animated:YES];
 }
