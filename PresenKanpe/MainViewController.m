@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     //navigationBar部分
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     //  iボタンを追加
     //  http://d.hatena.ne.jp/chaoruko/20120203/1328236510
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
