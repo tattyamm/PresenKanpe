@@ -98,9 +98,11 @@
     //キーボードのanimationDurationを取得
     NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
-    //メインビューの高さをキーボードの高さ分マイナスしたframe    //TODO ここをself.view.frameを使わずに、画面サイズから計算するようにすr。　http://smartgadgetlaboratory.blogspot.jp/2012/08/ioswidthheight.html
+    //使える画面のサイズ
     CGRect frame = self.view.frame;
-    frame.size.height = [[UIScreen mainScreen] applicationFrame].size.height - self.navigationController.navigationBar.frame.size.height - keyboardRect.size.height;    //ステータスバーを除く画面高さ - navigationBarの高さ - キーボードの高さ
+    frame.size.height = [[UIScreen mainScreen] applicationFrame].size.height//ステータスバーを除く画面高さ
+    - self.navigationController.navigationBar.frame.size.height//navigationBarの高さ
+    - keyboardRect.size.height;//キーボードの高さ
     //TODO ここから、ラベルの分の高さを引く
     
     //キーボードアニメーションと同じ間隔でメインビューの高さをアニメーションしつつ変更する。
@@ -110,15 +112,18 @@
     self.view.frame = frame;
     [UIView commitAnimations];
 }
-//キーボードが非表示にされた場合（keyboardWillShowと同じことを高さを+してやっているだけ）
+//キーボードが非表示にされた場合
 - (void)keyboardWillHide:(NSNotification *)aNotification {
     CGRect keyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     keyboardRect = [[self.view superview] convertRect:keyboardRect fromView:nil];
     
     NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
+    //使える画面のサイズ
     CGRect frame = self.view.frame;
-    frame.size.height += keyboardRect.size.height;
+    frame.size.height = [[UIScreen mainScreen] applicationFrame].size.height//ステータスバーを除く画面高さ
+    - self.navigationController.navigationBar.frame.size.height//navigationBarの高さ
+    - keyboardRect.size.height;//キーボードの高さ
     
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
