@@ -8,5 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KanpeViewController : UIViewController
+@interface KanpeViewController : UIViewController{
+    NSTimer *timer;
+}
 @end

@@ -23,11 +23,14 @@
     
     //ラベル
     UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    label.text = @"kanpe view";
+    label.frame = CGRectMake(0, 0, cgRectSize.size.width, 50);
+    label.text = @"00:00";
     label.textAlignment = NSTextAlignmentCenter;
     label.backgroundColor = [UIColor blackColor];
     label.textColor = [UIColor whiteColor];
-    label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    label.font = [UIFont systemFontOfSize:40];
+    label.adjustsFontSizeToFitWidth = YES;
+    label.minimumFontSize = 30.0f;
     [self.view addSubview:label];
     
     //カンペ文表示
@@ -71,6 +74,15 @@
          forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:stopButton];
     
+    
+    //ここに指定した時間毎に呼び出される
+    timer = [NSTimer scheduledTimerWithTimeInterval:(0.5)
+											 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    
+}
+
+-(void)onTimer:(NSTimer*)timer {
+    NSLog(@"onTimer");
 }
 
 - (void)startButtonDidPush {
