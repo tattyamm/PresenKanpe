@@ -10,5 +10,7 @@
 
 @interface KanpeViewController : UIViewController{
     NSTimer *timer;
+    UILabel *timerLabel;
 }
+@property (nonatomic, retain) UILabel *timerLabel;
 @end

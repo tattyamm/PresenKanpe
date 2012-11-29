@@ -11,6 +11,7 @@
 #import "MyCustomButton.h"
 
 @implementation KanpeViewController
+@synthesize timerLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,16 +23,16 @@
     CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
     
     //ラベル
-    UILabel* label = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    label.frame = CGRectMake(0, 0, cgRectSize.size.width, 50);
-    label.text = @"00:00";
-    label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = [UIColor blackColor];
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont systemFontOfSize:40];
-    label.adjustsFontSizeToFitWidth = YES;
-    label.minimumFontSize = 30.0f;
-    [self.view addSubview:label];
+    timerLabel = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
+    timerLabel.frame = CGRectMake(0, 0, cgRectSize.size.width, 50);
+    timerLabel.text = @"00:00";
+    timerLabel.textAlignment = NSTextAlignmentCenter;
+    timerLabel.backgroundColor = [UIColor blackColor];
+    timerLabel.textColor = [UIColor whiteColor];
+    timerLabel.font = [UIFont systemFontOfSize:40];
+    timerLabel.adjustsFontSizeToFitWidth = YES;
+    timerLabel.minimumFontSize = 30.0f;
+    [self.view addSubview:timerLabel];
     
     //カンペ文表示
     UITextView* textView = [[[UITextView alloc] init] autorelease];
@@ -76,7 +77,7 @@
     
     
     //ここに指定した時間毎に呼び出される
-    timer = [NSTimer scheduledTimerWithTimeInterval:(0.5)
+    timer = [NSTimer scheduledTimerWithTimeInterval:(1.0)
 											 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
     
 }
@@ -87,6 +88,7 @@
 
 - (void)startButtonDidPush {
     NSLog(@"startButtonDidPush");
+    timerLabel.text = @"55:55";
 }
 
 
@@ -97,6 +99,21 @@
 - (void)scrollButtonDidPush {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+/**
+ * 秒を受け取り、「01:23」という時刻風表示に変換する
+ * 例 NSString *result = [self makeClockStrFromSeconds:70.2];
+ */
+- (NSString *)makeClockStrFromSeconds:(double)second;  //戻り値がNSString型、引数がNSString型のメソッドを定義
+{
+    NSLog(@"引数:%f",second);
+    int min = (int)second/60;
+    int sec = (int)(second-min*60);
+    return [NSString stringWithFormat:@"%d:%d", min,sec];;
+    
+}
+
 
 @end
 
