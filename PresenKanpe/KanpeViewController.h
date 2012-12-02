@@ -7,10 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCustomButton.h"
+
+@class Stopwatch;
 
 @interface KanpeViewController : UIViewController{
-    NSTimer *timer;
     UILabel *timerLabel;
+    
+    NSTimer *timer;
+    Stopwatch *stopwatch;
+    
+    MyCustomButton *startButton, *resetButton;
+    UIActivityIndicatorView *busyIndicator;
 }
 @property (nonatomic, retain) UILabel *timerLabel;
+
+- (void)startButtonDidPush:(id)sender;
+- (void)resetButtonDidPush:(id)sender;
+- (void)updateUI:(NSTimer *)t;
+
 @end

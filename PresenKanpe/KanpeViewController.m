@@ -9,6 +9,7 @@
 #import "KanpeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MyCustomButton.h"
+#import "StopWatch.h"
 
 @implementation KanpeViewController
 @synthesize timerLabel;
@@ -57,8 +58,20 @@
     [self.view addSubview:scrollButton];
     
     
+    //リセットボタン（後で消すかも）
+    resetButton = [[MyCustomButton alloc] init];
+    resetButton.frame = CGRectMake(cgRectSize.size.width/3*1,0,cgRectSize.size.width/3*1,40);
+    resetButton.autoresizingMask =
+    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [resetButton setTitle:@"Reset" forState:UIControlStateNormal];
+    [resetButton addTarget:self
+                     action:@selector(resetButtonDidPush)
+           forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:resetButton];
+    
+    
     //スタートボタン
-    MyCustomButton *startButton = [[MyCustomButton alloc] init];
+    startButton = [[MyCustomButton alloc] init];
     startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width/2*1,40);
     [startButton setTitle:@"Start" forState:UIControlStateNormal];
     [startButton addTarget:self
@@ -76,25 +89,64 @@
     [self.view addSubview:stopButton];
     
     
-    //ここに指定した時間毎に呼び出される
-    timer = [NSTimer scheduledTimerWithTimeInterval:(1.0)
-											 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    //ストップウォッチ準備
+    stopwatch = [[Stopwatch alloc] init];
     
 }
 
--(void)onTimer:(NSTimer*)timer {
-    NSLog(@"onTimer");
+- (void)updateUI:(NSTimer *)t
+{
+    NSTimeInterval second = stopwatch.second;
+    NSString *s = [[NSString alloc] initWithFormat:@"%.2f", second];
+    timerLabel.text = s;
+    [s release];
 }
 
 - (void)startButtonDidPush {
     NSLog(@"startButtonDidPush");
-    timerLabel.text = @"55:55";
+    //timerLabel.text = @"55:55"; //こうやって表示を変える
+    [stopwatch startStop];
+    if (stopwatch.isStopwatchStart) {
+        // START
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                 target:self
+                                               selector:@selector(updateUI:)
+                                               userInfo:nil
+                                                repeats:YES];
+        [timer retain];
+        [startButton setTitle:@"STOP" forState:UIControlStateNormal];
+        
+        resetButton.userInteractionEnabled = NO;
+        resetButton.alpha = 0.5;
+
+    }
+    else {
+        // STOP
+        [timer invalidate];
+        [timer release];
+        [startButton setTitle:@"START" forState:UIControlStateNormal];
+        
+        resetButton.userInteractionEnabled = YES;
+        resetButton.alpha = 1.0;
+    }
 }
 
 
 - (void)stopButtonDidPush {
     NSLog(@"stopButtonDidPush");
 }
+
+- (void)resetButtonDidPush {
+    NSLog(@"resetButtonDidPush");
+    
+    if (stopwatch.isStopwatchStart)
+        return;
+    
+    [stopwatch reset];
+    [self updateUI:nil];
+    
+}
+
 
 - (void)scrollButtonDidPush {
     [self.navigationController popViewControllerAnimated:YES];

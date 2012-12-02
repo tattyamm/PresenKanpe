@@ -8,7 +8,9 @@
 
 #import "StopWatch.h"
 
-@implementation StopWatch
+@implementation Stopwatch
+
+@synthesize isStopwatchStart;
 
 - (NSTimeInterval)second
 {
@@ -18,4 +20,38 @@
     return second;
 }
 
+- (void)startStop
+{
+    if (isStopwatchStart) {
+        // STOP
+        offsetTime = self.second;
+        [startTime release];
+        startTime = nil;
+        self.isStopwatchStart = NO;
+    }
+    else {
+        // START
+        startTime = [[NSDate alloc] init];
+        self.isStopwatchStart = YES;
+    }
+}
+
+- (void)reset
+{
+    self.isStopwatchStart = NO;
+    offsetTime = 0.0;
+}
+
+- (id)init
+{
+    [super init];
+    [self reset];
+    return self;
+}
+
+- (void)dealloc
+{
+    [startTime release];
+    [super dealloc];
+}
 @end
