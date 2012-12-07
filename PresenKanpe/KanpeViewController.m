@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MyCustomButton.h"
 #import "StopWatch.h"
+#import "Configuration.h"
 
 @implementation KanpeViewController
 @synthesize timerLabel;
@@ -43,7 +44,7 @@
     textView.backgroundColor = [UIColor blackColor];
     textView.textColor = [UIColor whiteColor];
     textView.font = [UIFont systemFontOfSize:32];
-    textView.text = @"実は好奇心のゆえに、しかれども予は予が画師たるを利器として、ともかくも口実を設けつつ、予と兄弟もただならざる医学士高峰をしいて、某の日東京府下の一病院において、渠が刀を下すべき、貴船伯爵夫人の手術をば予をして見せしむることを余儀なくしたり。\nその日午前九時過ぐるころ家を出でて病院に腕車を飛ばしつ。";
+    textView.text = [Configuration kanpeString];
     [self.view addSubview:textView];
     
     //スクロールボタンを置くかも。

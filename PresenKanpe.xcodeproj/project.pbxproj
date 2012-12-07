@@ -22,6 +22,7 @@
 		AE3E96C016711AAC008BC18E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E96B816711AAC008BC18E /* Icon@2x.png */; };
 		AE3E96C116711B3A008BC18E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E968D16711A18008BC18E /* Icon.png */; };
 		AE3E96C216711B48008BC18E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3E968F16711A27008BC18E /* Icon@2x.png */; };
+		AE46C5661672621F00710B31 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46C5651672621F00710B31 /* Configuration.m */; };
 		AE9B8149164F70C300A96C88 /* KanpeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B8148164F70C300A96C88 /* KanpeViewController.m */; };
 		AE9B814C164F920500A96C88 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9B814B164F920500A96C88 /* AboutViewController.m */; };
 		AEE92261164F420D0052900C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92260164F420D0052900C /* UIKit.framework */; };
@@ -69,6 +70,9 @@
 		AE3E96B616711AAC008BC18E /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		AE3E96B716711AAC008BC18E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		AE3E96B816711AAC008BC18E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		AE46C5641672621F00710B31 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Configuration.h; path = Utility/Configuration.h; sourceTree = "<group>"; };
+		AE46C5651672621F00710B31 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Configuration.m; path = Utility/Configuration.m; sourceTree = "<group>"; };
+		AE46C5691672627500710B31 /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		AE9B8147164F6FAD00A96C88 /* KanpeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KanpeViewController.h; sourceTree = "<group>"; };
 		AE9B8148164F70C300A96C88 /* KanpeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KanpeViewController.m; sourceTree = "<group>"; };
 		AE9B814A164F91F300A96C88 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			children = (
 				AE17D6EA16692BFC0072DDDA /* StopWatch.h */,
 				AE17D6EB16692BFC0072DDDA /* StopWatch.m */,
+				AE46C5641672621F00710B31 /* Configuration.h */,
+				AE46C5651672621F00710B31 /* Configuration.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 				AE9B8148164F70C300A96C88 /* KanpeViewController.m */,
 				AE9B814A164F91F300A96C88 /* AboutViewController.h */,
 				AE9B814B164F920500A96C88 /* AboutViewController.m */,
+				AE46C5691672627500710B31 /* Const.h */,
 				AE17D6E816692BAF0072DDDA /* Utility */,
 				AE169916165FD353008AD55B /* UICustomView */,
 				AE2F577516710A1800EC109D /* Images */,
@@ -369,6 +376,7 @@
 				AE9B814C164F920500A96C88 /* AboutViewController.m in Sources */,
 				AE16991A165FD4E0008AD55B /* MyCustomButton.m in Sources */,
 				AE17D6EC16692BFC0072DDDA /* StopWatch.m in Sources */,
+				AE46C5661672621F00710B31 /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

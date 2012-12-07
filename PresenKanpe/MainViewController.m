@@ -10,6 +10,7 @@
 #import "KanpeViewController.h"
 #import "AboutViewController.h"
 #import <QuartzCore/QuartzCore.h>   //UITextFieldの枠線や、UIButtonの背景色を設定するのに使った
+#import "Configuration.h"
 
 @implementation MainViewController
 
@@ -178,6 +179,10 @@
 
 //画面遷移
 - (void)goButtonDidPushKanpe {
+    //入力文字の保存
+    [Configuration setKanpeString:textView_.text];
+    
+    //画面遷移
     KanpeViewController* about = [[[KanpeViewController alloc] init] autorelease];
     [self.navigationController pushViewController:about animated:YES];
 }
