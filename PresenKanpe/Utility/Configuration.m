@@ -2,8 +2,8 @@
 //  Configuration.m
 //  PresenKanpe
 //
-//  Created by tatsuya endo on 2012/12/08.
-//  Copyright (c) 2012年 tatsuya endo. All rights reserved.
+//  Created by tattyamm on 2012/12/08.
+//  Copyright (c) 2012年 tattyamm. All rights reserved.
 //
 
 #import "Configuration.h"
@@ -11,12 +11,18 @@
 
 @implementation Configuration
 
+/**
+ * kanpeStringのgetter.
+ */
 + (NSString *)kanpeString {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults registerDefaults:@{KANPE_STRING_SAVE_KEY : @""}];
     return [userDefaults objectForKey:KANPE_STRING_SAVE_KEY];
 }
 
+/**
+ * kanpeStringのsetter.
+ */
 + (void)setKanpeString:(NSString *)value {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:value forKey:KANPE_STRING_SAVE_KEY];
