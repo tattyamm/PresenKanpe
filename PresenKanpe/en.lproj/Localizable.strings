@@ -7,3 +7,11 @@
 */
 
 "MainViewDoneButton" = "Done";
+
+"KanpeViewResetButton" = "Reset";
+"KanpeViewStartButton" = "Start";
+"KanpeViewStopButton" = "Stop";
+"AboutViewAboutText" = "It is the application for presenter looking during presentation.\nThis application displays an elapsed time and the memo which I registered beforehand.\n\nAuthor\nEntatsu\nhttp://twitter.com/tattyam";
+
+"AboutViewTwitterButton" = "Author's twitter";
+"AboutViewBackButton" = "Back";

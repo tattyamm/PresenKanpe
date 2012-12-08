@@ -9,10 +9,10 @@
 
 
 #ifndef PresenKanpe_Const_h //この値が定義されていなければ、この中を有効にする(複数回読み込み防止)
-#define PresenKanpe_Const_h
+    #define PresenKanpe_Const_h
 
-/* 定数 */
-
-#define KANPE_STRING_SAVE_KEY   @"kanpe_save_key"
+    /* 定数 */
+    #define KANPE_STRING_SAVE_KEY   @"kanpe_save_key"
+    #define TWITTER_URL_TATTYAMM    @"https://twitter.com/tattyamm"
 
 #endif

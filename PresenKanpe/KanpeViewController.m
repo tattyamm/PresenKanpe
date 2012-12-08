@@ -40,7 +40,7 @@
     UITextView* textView = [[[UITextView alloc] init] autorelease];
     textView.frame = CGRectMake(0,100,cgRectSize.size.width,300);
     textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    textView.editable = NO; //編集不可
+    textView.editable = NO; //編集不可にする
     textView.backgroundColor = [UIColor blackColor];
     textView.textColor = [UIColor whiteColor];
     textView.font = [UIFont systemFontOfSize:32];
@@ -64,7 +64,7 @@
     resetButton.frame = CGRectMake(cgRectSize.size.width/3*1,0,cgRectSize.size.width/3*1,40);
     resetButton.autoresizingMask =
     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [resetButton setTitle:@"Reset" forState:UIControlStateNormal];
+    [resetButton setTitle:NSLocalizedString(@"KanpeViewResetButton", nil) forState:UIControlStateNormal];
     [resetButton addTarget:self
                      action:@selector(resetButtonDidPush)
            forControlEvents:UIControlEventTouchUpInside];
@@ -74,7 +74,7 @@
     //スタートボタン
     startButton = [[MyCustomButton alloc] init];
     startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width/2*1,40);
-    [startButton setTitle:@"Start" forState:UIControlStateNormal];
+    [startButton setTitle:NSLocalizedString(@"KanpeViewStartButton", nil) forState:UIControlStateNormal];
     [startButton addTarget:self
                     action:@selector(startButtonDidPush)
           forControlEvents:UIControlEventTouchUpInside];
@@ -83,7 +83,7 @@
     //ストップボタン
     MyCustomButton *stopButton = [[MyCustomButton alloc] init];
     stopButton.frame = CGRectMake(cgRectSize.size.width/2*1,60,cgRectSize.size.width/2*1,40);
-    [stopButton setTitle:@"Stop" forState:UIControlStateNormal];
+    [stopButton setTitle:NSLocalizedString(@"KanpeViewStopButton", nil) forState:UIControlStateNormal];
     [stopButton addTarget:self
                    action:@selector(stopButtonDidPush)
          forControlEvents:UIControlEventTouchUpInside];

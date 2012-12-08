@@ -7,3 +7,11 @@
 */
 
 "MainViewDoneButton" = "決定";
+
+"KanpeViewResetButton" = "Reset";
+"KanpeViewStartButton" = "Start";
+"KanpeViewStopButton" = "Stop";
+"AboutViewAboutText" = "プレゼン中に見る発表者の為のアプリです。経過時間と、事前に登録したメモを表示します。\n\n・起動画面\n表示させる文章を入力して下さい。\n\n・設定画面\nプレゼン画面の文章の文字サイズと、ボタンが押された時のスクロール量を設定します。\n\n・プレゼン画面\nタイマーと文章をそれぞれ表示します。なお、この画面中はスリープが無効になります。\n\n・注意事項\n本番で動作に不足が無いよう、事前に必ず動作確認を行って下さい。\n\n\n\n・作者\nえんたつ(Entatsu)\nhttp://twitter.com/tattyamm";
+
+"AboutViewTwitterButton" = "作者のtwitterへ";
+"AboutViewBackButton" = "戻る";
