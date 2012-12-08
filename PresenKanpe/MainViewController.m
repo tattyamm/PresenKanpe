@@ -34,7 +34,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     //  決定ボタンを追加(任意の文字)
     UIBarButtonItem *goButton = [[UIBarButtonItem alloc]
-                            initWithTitle:@"決定"
+                            initWithTitle:NSLocalizedString(@"MainViewDoneButton", nil)
                             style:UIBarButtonItemStylePlain
                             target:self
                             action:@selector(goButtonDidPushKanpe)];

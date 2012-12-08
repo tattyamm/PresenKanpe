@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0E737416733A2800EE6FC1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0E737216733A2800EE6FC1 /* Localizable.strings */; };
 		AE16991A165FD4E0008AD55B /* MyCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE169919165FD4E0008AD55B /* MyCustomButton.m */; };
 		AE17D6EC16692BFC0072DDDA /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17D6EB16692BFC0072DDDA /* StopWatch.m */; };
 		AE2F577916710A1800EC109D /* arrow_left_24.png in Resources */ = {isa = PBXBuildFile; fileRef = AE2F577616710A1800EC109D /* arrow_left_24.png */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		AE0E73701673371900EE6FC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE0E73711673371900EE6FC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE0E737316733A2800EE6FC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AE0E737516733A8400EE6FC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE169918165FD4E0008AD55B /* MyCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCustomButton.h; path = UICustomView/MyCustomButton.h; sourceTree = "<group>"; };
 		AE169919165FD4E0008AD55B /* MyCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCustomButton.m; path = UICustomView/MyCustomButton.m; sourceTree = "<group>"; };
 		AE17D6EA16692BFC0072DDDA /* StopWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopWatch.h; path = Utility/StopWatch.h; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 			children = (
 				AEE92268164F420D0052900C /* PresenKanpe-Info.plist */,
 				AEE92269164F420D0052900C /* InfoPlist.strings */,
+				AE0E737216733A2800EE6FC1 /* Localizable.strings */,
 				AEE9226C164F420D0052900C /* main.m */,
 				AEE9226E164F420D0052900C /* PresenKanpe-Prefix.pch */,
 				AEE92272164F420D0052900C /* Default.png */,
@@ -338,6 +342,7 @@
 				AE3E96C016711AAC008BC18E /* Icon@2x.png in Resources */,
 				AE3E96C116711B3A008BC18E /* Icon.png in Resources */,
 				AE3E96C216711B48008BC18E /* Icon@2x.png in Resources */,
+				AE0E737416733A2800EE6FC1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +407,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AE0E737216733A2800EE6FC1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE0E737316733A2800EE6FC1 /* en */,
+				AE0E737516733A8400EE6FC1 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		AEE92269164F420D0052900C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
