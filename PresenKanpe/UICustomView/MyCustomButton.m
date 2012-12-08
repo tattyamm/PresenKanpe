@@ -27,7 +27,7 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    NSLog(@"MyCustomButton drawRect");
+    //NSLog(@"MyCustomButton drawRect");
     
     //UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     [[self layer] setCornerRadius:20.0f];

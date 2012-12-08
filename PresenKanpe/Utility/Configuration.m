@@ -16,7 +16,7 @@
  */
 + (NSString *)kanpeString {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults registerDefaults:@{KANPE_STRING_SAVE_KEY : @""}];
+    [userDefaults registerDefaults:@{KANPE_STRING_SAVE_KEY : NSLocalizedString(@"DefaultKaneText", nil)}];
     return [userDefaults objectForKey:KANPE_STRING_SAVE_KEY];
 }
 
