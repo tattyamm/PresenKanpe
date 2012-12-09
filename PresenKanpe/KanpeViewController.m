@@ -11,8 +11,7 @@
 #import "MyCustomButton.h"
 #import "StopWatch.h"
 #import "Configuration.h"
-#import "FPPopoverController.h"
-#import "KanpeMenuViewController.h"
+
 
 @implementation KanpeViewController
 @synthesize timerLabel;
@@ -22,23 +21,6 @@
     
     //viewの設定
     self.view.backgroundColor = [UIColor blackColor];
-    
-    //navigationBarの設定
-    //  メニューボタン
-    /*
-    UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [menuButton addTarget:self
-                   action:@selector(menuButtonDidPush)
-         forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
-    */
-    //  メニューボタン
-    UIBarButtonItem *menuButton = [[UIBarButtonItem alloc]
-                                 initWithTitle:NSLocalizedString(@"KanpeViewMenuButton", nil)
-                                 style:UIBarButtonItemStylePlain
-                                 target:self
-                                 action:@selector(popover:)];
-    self.navigationItem.rightBarButtonItem = menuButton;
     
     //画面サイズ取得
     CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
@@ -170,32 +152,6 @@
 
 - (void)scrollButtonDidPush {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-//
--(void)popover:(id)sender{
-//-(IBAction)buttonClicked:(UIButton*)okButton
-    
-    //the view controller you want to present as popover
-    //KanpeViewController *controller = [[KanpeViewController alloc] init];
-    KanpeMenuViewController *controller = [[KanpeMenuViewController alloc] init];
-    
-    //our popover
-    FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:controller];
-
-    //UIBarButtonへの対応
-    //http://stackoverflow.com/questions/12017598/iphone-error-when-using-the-fppopover-class-when-using-it-with-a-uibarbuttonite?rq=1
-    UIBarButtonItem *buttonItem = sender;
-    UIView* btnView = [buttonItem valueForKey:@"view"];
-    //On these cases is better to specify the arrow direction
-    [popover setArrowDirection:FPPopoverArrowDirectionUp];
-    [popover presentPopoverFromView:btnView];
-    
-    //the popover will be presented from the okButton view
-    //[popover presentPopoverFromView:menuButton];
-    
-    //release
-    [controller release];
 }
 
 
