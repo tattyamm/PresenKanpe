@@ -32,8 +32,8 @@
 
     
     //画面サイズ取得
-    CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
-    
+    CGRect cgRectSize = [[UIScreen mainScreen] applicationFrame]; //ステータスバーを除いた画面サイズ
+
     //ラベル
     timerLabel = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
     timerLabel.frame = CGRectMake(0, 0, cgRectSize.size.width, 50);
@@ -47,19 +47,21 @@
     [self.view addSubview:timerLabel];
     
     //カンペ文表示
-    UITextView* textView = [[[UITextView alloc] init] autorelease];
-    textView.frame = CGRectMake(0,100,cgRectSize.size.width,300);
+    textView = [[[UITextView alloc] init] autorelease];
+    textView.frame = CGRectMake(0,100,cgRectSize.size.width,cgRectSize.size.height-100);
     textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     textView.editable = NO; //編集不可にする
     textView.backgroundColor = [UIColor blackColor];
     textView.textColor = [UIColor whiteColor];
     textView.font = [UIFont systemFontOfSize:32];
+    textView.indicatorStyle = UIScrollViewIndicatorStyleWhite;//スクロールバーの色
     textView.text = [Configuration kanpeString];
     [self.view addSubview:textView];
     
-    //スクロールボタンを置くかも。
+    /*
+    //スクロールボタンを置くかも。 -> 1行スクロールのやり方がよくわからない。
     MyCustomButton *scrollButton = [[MyCustomButton alloc] init];
-    scrollButton.frame = CGRectMake(cgRectSize.size.width/3*2,0,cgRectSize.size.width/3*1,40);
+    scrollButton.frame = CGRectMake(0,0,cgRectSize.size.width,35);
     scrollButton.autoresizingMask =
         UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [scrollButton setTitle:@"scroll" forState:UIControlStateNormal];
@@ -67,11 +69,12 @@
                     action:@selector(scrollButtonDidPush)
           forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:scrollButton];
+     */
     
     
     //スタートボタン
     startButton = [[MyCustomButton alloc] init];
-    startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width,30);
+    startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width,35);
     [startButton setTitle:NSLocalizedString(@"KanpeViewStartButton", nil) forState:UIControlStateNormal];
     [startButton addTarget:self
                     action:@selector(startButtonDidPush)
@@ -113,18 +116,18 @@
                                                userInfo:nil
                                                 repeats:YES];
         [timer retain];
-        [startButton setTitle:@"STOP" forState:UIControlStateNormal];
+        [startButton setTitle:NSLocalizedString(@"KanpeViewStopButton", nil) forState:UIControlStateNormal];
     }
     else {
         // STOP
         [timer invalidate];
         [timer release];
-        [startButton setTitle:@"START" forState:UIControlStateNormal];
+        [startButton setTitle:NSLocalizedString(@"KanpeViewStartButton", nil) forState:UIControlStateNormal];
         
     }
 }
 
-
+/*
 - (void)stopButtonDidPush {
     NSLog(@"stopButtonDidPush");
     [stopwatch control];
@@ -147,6 +150,7 @@
         
     }
 }
+ */
 
 - (void)resetButtonDidPush {
     NSLog(@"resetButtonDidPush");
@@ -154,17 +158,23 @@
     if (stopwatch.isStopwatchStart){
         return;
     }
+
+    //スクロールのリセット
+    NSRange range = NSMakeRange(0, 0);
+    [textView scrollRangeToVisible:range];
     
+    //タイマーのリセット
     [stopwatch reset];
     [self updateUI:nil];
-    
 }
 
-
+/*
 - (void)scrollButtonDidPush {
-    [self.navigationController popViewControllerAnimated:YES];
+    //末尾までスクロールする場合の書き方
+    NSRange range = NSMakeRange(textView.text.length - 1, 1);
+    [textView scrollRangeToVisible:range];
 }
-
+*/
 
 /**
  * 秒を受け取り、「01:23」という時刻風表示に変換する
@@ -172,7 +182,6 @@
  */
 - (NSString *)makeClockStrFromSeconds:(double)second;  //戻り値がNSString型、引数がNSString型のメソッドを定義
 {
-    NSLog(@"引数:%f",second);
     int min = (int)second/60;
     int sec = (int)(second-min*60);
     return [NSString stringWithFormat:@"%02d:%02d", min,sec];;

@@ -67,6 +67,7 @@
     //テキストフィールド
     textView_ = [[UITextView alloc] init];
     textView_.frame = self.view.bounds;
+    textView_.font = [UIFont systemFontOfSize:16];
     //textView_.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     //textView_.delegate = self;
     textView_.text = [Configuration kanpeString];

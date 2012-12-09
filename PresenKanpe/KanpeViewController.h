@@ -13,7 +13,8 @@
 
 @interface KanpeViewController : UIViewController{
     UILabel *timerLabel;
-    
+    UITextView *textView;
+
     NSTimer *timer;
     Stopwatch *stopwatch;
     
@@ -23,7 +24,7 @@
 @property (nonatomic, retain) UILabel *timerLabel;
 
 - (void)startButtonDidPush:(id)sender;
-- (void)stopButtonDidPush:(id)sender;
+//- (void)stopButtonDidPush:(id)sender;
 - (void)resetButtonDidPush:(id)sender;
 - (void)updateUI:(NSTimer *)t;
 
