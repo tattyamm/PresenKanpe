@@ -39,6 +39,10 @@
 		AEE92290164F420E0052900C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE92262164F420D0052900C /* Foundation.framework */; };
 		AEE92298164F420F0052900C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEE92296164F420F0052900C /* InfoPlist.strings */; };
 		AEE9229B164F420F0052900C /* PresenKanpeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE9229A164F420F0052900C /* PresenKanpeTests.m */; };
+		AEF771C816742A600033C3A1 /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF771C316742A600033C3A1 /* FPPopoverController.m */; };
+		AEF771C916742A600033C3A1 /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF771C516742A600033C3A1 /* FPPopoverView.m */; };
+		AEF771CA16742A600033C3A1 /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF771C716742A600033C3A1 /* FPTouchView.m */; };
+		AEF771D016744F480033C3A1 /* KanpeMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF771CF16744F480033C3A1 /* KanpeMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,14 @@
 		AEE92297164F420F0052900C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AEE92299164F420F0052900C /* PresenKanpeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresenKanpeTests.h; sourceTree = "<group>"; };
 		AEE9229A164F420F0052900C /* PresenKanpeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresenKanpeTests.m; sourceTree = "<group>"; };
+		AEF771C216742A600033C3A1 /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPPopoverController.h; path = FPPopover/FPPopoverController.h; sourceTree = "<group>"; };
+		AEF771C316742A600033C3A1 /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPPopoverController.m; path = FPPopover/FPPopoverController.m; sourceTree = "<group>"; };
+		AEF771C416742A600033C3A1 /* FPPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPPopoverView.h; path = FPPopover/FPPopoverView.h; sourceTree = "<group>"; };
+		AEF771C516742A600033C3A1 /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPPopoverView.m; path = FPPopover/FPPopoverView.m; sourceTree = "<group>"; };
+		AEF771C616742A600033C3A1 /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPTouchView.h; path = FPPopover/FPTouchView.h; sourceTree = "<group>"; };
+		AEF771C716742A600033C3A1 /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPTouchView.m; path = FPPopover/FPTouchView.m; sourceTree = "<group>"; };
+		AEF771CE16744F480033C3A1 /* KanpeMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KanpeMenuViewController.h; sourceTree = "<group>"; };
+		AEF771CF16744F480033C3A1 /* KanpeMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KanpeMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +216,10 @@
 				AE9B8148164F70C300A96C88 /* KanpeViewController.m */,
 				AE9B814A164F91F300A96C88 /* AboutViewController.h */,
 				AE9B814B164F920500A96C88 /* AboutViewController.m */,
+				AEF771CE16744F480033C3A1 /* KanpeMenuViewController.h */,
+				AEF771CF16744F480033C3A1 /* KanpeMenuViewController.m */,
 				AE46C5691672627500710B31 /* Const.h */,
+				AEF771C016742A060033C3A1 /* FPPopover */,
 				AE17D6E816692BAF0072DDDA /* Utility */,
 				AE169916165FD353008AD55B /* UICustomView */,
 				AE2F577516710A1800EC109D /* Images */,
@@ -245,6 +260,19 @@
 				AEE92296164F420F0052900C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEF771C016742A060033C3A1 /* FPPopover */ = {
+			isa = PBXGroup;
+			children = (
+				AEF771C216742A600033C3A1 /* FPPopoverController.h */,
+				AEF771C316742A600033C3A1 /* FPPopoverController.m */,
+				AEF771C416742A600033C3A1 /* FPPopoverView.h */,
+				AEF771C516742A600033C3A1 /* FPPopoverView.m */,
+				AEF771C616742A600033C3A1 /* FPTouchView.h */,
+				AEF771C716742A600033C3A1 /* FPTouchView.m */,
+			);
+			name = FPPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +405,10 @@
 				AE16991A165FD4E0008AD55B /* MyCustomButton.m in Sources */,
 				AE17D6EC16692BFC0072DDDA /* StopWatch.m in Sources */,
 				AE46C5661672621F00710B31 /* Configuration.m in Sources */,
+				AEF771C816742A600033C3A1 /* FPPopoverController.m in Sources */,
+				AEF771C916742A600033C3A1 /* FPPopoverView.m in Sources */,
+				AEF771CA16742A600033C3A1 /* FPTouchView.m in Sources */,
+				AEF771D016744F480033C3A1 /* KanpeMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

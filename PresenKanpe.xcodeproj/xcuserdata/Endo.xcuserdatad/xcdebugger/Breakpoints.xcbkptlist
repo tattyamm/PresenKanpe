@@ -19,11 +19,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PresenKanpe/KanpeViewController.m"
-         timestampString = "376595581.606847"
+         timestampString = "376721292.707116"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "15"
-         endingLineNumber = "15"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
          landmarkName = "@implementation KanpeViewController"
          landmarkType = "3">
       </FileBreakpoint>
