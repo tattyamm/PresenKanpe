@@ -6,6 +6,7 @@
   Copyright (c) 2012年 tattyamm. All rights reserved.
 */
 
+"MainViewTitleText" = "Presentation Memo";
 "MainViewDoneButton" = "Done";
 
 "KanpeViewResetButton" = "Reset";

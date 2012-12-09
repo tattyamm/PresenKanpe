@@ -15,7 +15,7 @@
 @implementation MainViewController
 
 -(id)init{
-    self.title=@"PresenKanpe";
+    self.title=NSLocalizedString(@"MainViewTitleText", nil);
     return self;
 }
 
