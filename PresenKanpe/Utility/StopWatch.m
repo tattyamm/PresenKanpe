@@ -20,7 +20,7 @@
     return second;
 }
 
-- (void)startStop
+- (void)control
 {
     if (isStopwatchStart) {
         // STOP

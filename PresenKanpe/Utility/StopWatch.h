@@ -15,6 +15,6 @@
 }
 @property(readonly) NSTimeInterval second;
 @property BOOL isStopwatchStart;
-- (void)startStop;
+- (void)control;
 - (void)reset;
 @end

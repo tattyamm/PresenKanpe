@@ -12,7 +12,6 @@
 #import "StopWatch.h"
 #import "Configuration.h"
 
-
 @implementation KanpeViewController
 @synthesize timerLabel;
 
@@ -21,6 +20,16 @@
     
     //viewの設定
     self.view.backgroundColor = [UIColor blackColor];
+    
+    //navigationBarの設定
+    //  リセットボタンを追加（右上）
+    UIBarButtonItem *resetButton = [[UIBarButtonItem alloc]
+                                 initWithTitle:NSLocalizedString(@"KanpeViewResetButton", nil)
+                                 style:UIBarButtonItemStylePlain
+                                 target:self
+                                 action:@selector(resetButtonDidPush)];
+    self.navigationItem.rightBarButtonItem = resetButton;
+
     
     //画面サイズ取得
     CGRect cgRectSize = [[UIScreen mainScreen] bounds]; //cgRectSize.size.widthで取得
@@ -60,18 +69,6 @@
     [self.view addSubview:scrollButton];
     
     
-    //リセットボタン（後で消すかも）
-    resetButton = [[MyCustomButton alloc] init];
-    resetButton.frame = CGRectMake(cgRectSize.size.width/3*1,0,cgRectSize.size.width/3*1,40);
-    resetButton.autoresizingMask =
-    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [resetButton setTitle:NSLocalizedString(@"KanpeViewResetButton", nil) forState:UIControlStateNormal];
-    [resetButton addTarget:self
-                     action:@selector(resetButtonDidPush)
-           forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:resetButton];
-    
-    
     //スタートボタン
     startButton = [[MyCustomButton alloc] init];
     startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width/2*1,40);
@@ -82,7 +79,7 @@
     [self.view addSubview:startButton];
     
     //ストップボタン
-    MyCustomButton *stopButton = [[MyCustomButton alloc] init];
+    stopButton = [[MyCustomButton alloc] init];
     stopButton.frame = CGRectMake(cgRectSize.size.width/2*1,60,cgRectSize.size.width/2*1,40);
     [stopButton setTitle:NSLocalizedString(@"KanpeViewStopButton", nil) forState:UIControlStateNormal];
     [stopButton addTarget:self
@@ -99,15 +96,37 @@
 - (void)updateUI:(NSTimer *)t
 {
     NSTimeInterval second = stopwatch.second;
-    NSString *s = [[NSString alloc] initWithFormat:@"%.2f", second];
-    timerLabel.text = s;
-    [s release];
+    //NSString *s = [[NSString alloc] initWithFormat:@"%.2f", second];
+    timerLabel.text = [self makeClockStrFromSeconds:second];
+    //[s release];
 }
 
 - (void)startButtonDidPush {
     NSLog(@"startButtonDidPush");
-    //timerLabel.text = @"55:55"; //こうやって表示を変える
-    [stopwatch startStop];
+    [stopwatch control];
+    if (stopwatch.isStopwatchStart) {
+        // START
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                 target:self
+                                               selector:@selector(updateUI:)
+                                               userInfo:nil
+                                                repeats:YES];
+        [timer retain];
+        [startButton setTitle:@"STOP" forState:UIControlStateNormal];
+    }
+    else {
+        // STOP
+        [timer invalidate];
+        [timer release];
+        [startButton setTitle:@"START" forState:UIControlStateNormal];
+        
+    }
+}
+
+
+- (void)stopButtonDidPush {
+    NSLog(@"stopButtonDidPush");
+    [stopwatch control];
     if (stopwatch.isStopwatchStart) {
         // START
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1
@@ -118,9 +137,6 @@
         [timer retain];
         [startButton setTitle:@"STOP" forState:UIControlStateNormal];
         
-        resetButton.userInteractionEnabled = NO;
-        resetButton.alpha = 0.5;
-
     }
     else {
         // STOP
@@ -128,21 +144,15 @@
         [timer release];
         [startButton setTitle:@"START" forState:UIControlStateNormal];
         
-        resetButton.userInteractionEnabled = YES;
-        resetButton.alpha = 1.0;
     }
-}
-
-
-- (void)stopButtonDidPush {
-    NSLog(@"stopButtonDidPush");
 }
 
 - (void)resetButtonDidPush {
     NSLog(@"resetButtonDidPush");
     
-    if (stopwatch.isStopwatchStart)
+    if (stopwatch.isStopwatchStart){
         return;
+    }
     
     [stopwatch reset];
     [self updateUI:nil];
@@ -164,7 +174,7 @@
     NSLog(@"引数:%f",second);
     int min = (int)second/60;
     int sec = (int)(second-min*60);
-    return [NSString stringWithFormat:@"%d:%d", min,sec];;
+    return [NSString stringWithFormat:@"%02d:%02d", min,sec];;
     
 }
 

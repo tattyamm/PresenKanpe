@@ -32,7 +32,7 @@
                    action:@selector(infoButtonDiDPushed)
          forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-    //  決定ボタンを追加(任意の文字)
+    //  決定ボタンを追加（右上）
     UIBarButtonItem *goButton = [[UIBarButtonItem alloc]
                             initWithTitle:NSLocalizedString(@"MainViewDoneButton", nil)
                             style:UIBarButtonItemStylePlain
