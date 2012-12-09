@@ -41,7 +41,7 @@
     timerLabel.textAlignment = NSTextAlignmentCenter;
     timerLabel.backgroundColor = [UIColor blackColor];
     timerLabel.textColor = [UIColor whiteColor];
-    timerLabel.font = [UIFont systemFontOfSize:40];
+    timerLabel.font = [UIFont systemFontOfSize:50];
     timerLabel.adjustsFontSizeToFitWidth = YES;
     timerLabel.minimumFontSize = 30.0f;
     [self.view addSubview:timerLabel];
@@ -71,13 +71,14 @@
     
     //スタートボタン
     startButton = [[MyCustomButton alloc] init];
-    startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width/2*1,40);
+    startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width,30);
     [startButton setTitle:NSLocalizedString(@"KanpeViewStartButton", nil) forState:UIControlStateNormal];
     [startButton addTarget:self
                     action:@selector(startButtonDidPush)
           forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:startButton];
     
+    /*
     //ストップボタン
     stopButton = [[MyCustomButton alloc] init];
     stopButton.frame = CGRectMake(cgRectSize.size.width/2*1,60,cgRectSize.size.width/2*1,40);
@@ -86,7 +87,7 @@
                    action:@selector(stopButtonDidPush)
          forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:stopButton];
-    
+    */
     
     //ストップウォッチ準備
     stopwatch = [[Stopwatch alloc] init];
