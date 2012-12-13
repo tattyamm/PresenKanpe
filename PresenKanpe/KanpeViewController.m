@@ -36,19 +36,19 @@
 
     //ラベル
     timerLabel = [[[UILabel alloc] initWithFrame:self.view.bounds] autorelease];
-    timerLabel.frame = CGRectMake(0, 0, cgRectSize.size.width, 50);
+    timerLabel.frame = CGRectMake(0, 0, cgRectSize.size.width, 80);
     timerLabel.text = @"00:00";
     timerLabel.textAlignment = NSTextAlignmentCenter;
     timerLabel.backgroundColor = [UIColor blackColor];
     timerLabel.textColor = [UIColor whiteColor];
-    timerLabel.font = [UIFont systemFontOfSize:50];
+    timerLabel.font = [UIFont systemFontOfSize:70];
     timerLabel.adjustsFontSizeToFitWidth = YES;
     timerLabel.minimumFontSize = 30.0f;
     [self.view addSubview:timerLabel];
     
     //カンペ文表示
     textView = [[[UITextView alloc] init] autorelease];
-    textView.frame = CGRectMake(0,100,cgRectSize.size.width,cgRectSize.size.height-100);
+    textView.frame = CGRectMake(0,120,cgRectSize.size.width,cgRectSize.size.height-100);
     textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     textView.editable = NO; //編集不可にする
     textView.backgroundColor = [UIColor blackColor];
@@ -74,7 +74,7 @@
     
     //スタートボタン
     startButton = [[MyCustomButton alloc] init];
-    startButton.frame = CGRectMake(cgRectSize.size.width/2*0,60,cgRectSize.size.width,35);
+    startButton.frame = CGRectMake(cgRectSize.size.width/2*0,80,cgRectSize.size.width,35);
     [startButton setTitle:NSLocalizedString(@"KanpeViewStartButton", nil) forState:UIControlStateNormal];
     [startButton addTarget:self
                     action:@selector(startButtonDidPush)
