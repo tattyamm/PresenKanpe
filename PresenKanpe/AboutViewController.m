@@ -52,6 +52,7 @@
     [goTwitterButton addTarget:self
                         action:@selector(goTwitter)
               forControlEvents:UIControlEventTouchUpInside];
+    [goTwitterButton setTitleColor:[UIColor lightTextColor] forState:UIControlStateHighlighted];
     [self.view addSubview:goTwitterButton];
 
     /*

@@ -79,6 +79,7 @@
     [startButton addTarget:self
                     action:@selector(startButtonDidPush)
           forControlEvents:UIControlEventTouchUpInside];
+    [startButton setTitleColor:[UIColor lightTextColor] forState:UIControlStateHighlighted];
     [self.view addSubview:startButton];
     
     /*

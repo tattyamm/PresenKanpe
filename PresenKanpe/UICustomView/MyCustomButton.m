@@ -35,7 +35,7 @@
     [[self layer] setBorderWidth:2.0f];
     [[self layer] setBackgroundColor:[[UIColor blackColor] CGColor]];
     [[self layer] setBorderColor:[[UIColor whiteColor] CGColor]];
-    
+
     /* 自分で書く必要がある部分
     [button setTitle:@"ボタン" forState:UIControlStateNormal];
     [button addTarget:self
@@ -43,6 +43,7 @@
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(0,cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
                               ,cgRectSize.size.width,BUTTON_HEIGHT);
+    [button setTitleColor:[UIColor lightTextColor] forState:UIControlStateHighlighted];//これはデザインに関する事なのでCustomViewに入れたいのだが、signal SIGABRTで落ちる。
     [self.view addSubview:button];
      */
     
