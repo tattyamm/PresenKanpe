@@ -10,7 +10,7 @@
 #import "KanpeViewController.h"
 #import "AboutViewController.h"
 #import <QuartzCore/QuartzCore.h>   //UITextFieldの枠線や、UIButtonの背景色を設定するのに使った
-#import "Configuration.h"
+
 
 @implementation MainViewController
 

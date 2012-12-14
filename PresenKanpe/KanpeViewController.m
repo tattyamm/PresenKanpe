@@ -10,7 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MyCustomButton.h"
 #import "StopWatch.h"
-#import "Configuration.h"
 
 @implementation KanpeViewController
 @synthesize timerLabel;
