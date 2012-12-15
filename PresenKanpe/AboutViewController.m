@@ -34,7 +34,7 @@
 
     //iAd
     ADBannerView *adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-    adView.frame = CGRectMake(0 , cgRectSize.size.height-navBarHeight-BUTTON_HEIGHT
+    adView.frame = CGRectMake(0 , cgRectSize.size.height-navBarHeight-adView.frame.size.height
                               , adView.frame.size.width , adView.frame.size.height);
     adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     [self.view addSubview:adView];  
