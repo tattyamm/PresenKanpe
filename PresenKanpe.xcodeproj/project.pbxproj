@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0999EC167C1962006061E4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0999EB167C1962006061E4 /* iAd.framework */; };
 		AE0E737416733A2800EE6FC1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0E737216733A2800EE6FC1 /* Localizable.strings */; };
 		AE16991A165FD4E0008AD55B /* MyCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE169919165FD4E0008AD55B /* MyCustomButton.m */; };
 		AE17D6EC16692BFC0072DDDA /* StopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17D6EB16692BFC0072DDDA /* StopWatch.m */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE0999EB167C1962006061E4 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		AE0E73701673371900EE6FC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE0E73711673371900EE6FC1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE0E737316733A2800EE6FC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0999EC167C1962006061E4 /* iAd.framework in Frameworks */,
 				AEE92261164F420D0052900C /* UIKit.framework in Frameworks */,
 				AEE92263164F420D0052900C /* Foundation.framework in Frameworks */,
 				AEE92265164F420D0052900C /* CoreGraphics.framework in Frameworks */,
@@ -185,6 +188,7 @@
 		AEE9225F164F420D0052900C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE0999EB167C1962006061E4 /* iAd.framework */,
 				AEE92260164F420D0052900C /* UIKit.framework */,
 				AEE92262164F420D0052900C /* Foundation.framework */,
 				AEE92264164F420D0052900C /* CoreGraphics.framework */,

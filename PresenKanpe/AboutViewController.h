@@ -8,5 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : UIViewController{
+    BOOL bannerIsVisible;//iAd
+}
+@property (nonatomic, assign) BOOL bannerIsVisible;
 @end
